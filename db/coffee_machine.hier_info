@@ -1,0 +1,25 @@
+|coffee_machine
+reset => reg_fstate.s025.OUTPUTSELECT
+reset => reg_fstate.s075.OUTPUTSELECT
+reset => reg_fstate.coffee_out.OUTPUTSELECT
+reset => reg_fstate.s05.OUTPUTSELECT
+reset => reg_fstate.waiting.OUTPUTSELECT
+reset => reg_sai_cafe.OUTPUTSELECT
+reset => sai_cafe.OUTPUTSELECT
+clock => fstate~1.DATAIN
+money_in025 => always1.IN0
+money_in025 => always1.IN0
+money_in025 => always1.IN0
+money_in025 => always1.IN0
+money_in05 => always1.IN1
+money_in05 => always1.IN1
+money_in05 => always1.IN1
+money_in05 => always1.IN1
+money_in05 => always1.IN1
+money_in1 => always1.IN1
+money_in1 => always1.IN1
+money_in1 => always1.IN1
+money_in1 => always1.IN1
+sai_cafe << sai_cafe.DB_MAX_OUTPUT_PORT_TYPE
+
+
