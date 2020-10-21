@@ -22,10 +22,10 @@
 
 module coffee_machine (
     input reset, input clock, input money_in025, input money_in05, input money_in1,
-    output reg sai_cafe);
+    output reg sai_cafe, output reg [9:0]coffee_counter);
 
-    //reg reg_sai_cafe;
-	 //reg reg_coffee_counter, reg_coffee_counter_temp;
+	 reg coffee_counter_temp;
+
     enum int unsigned { waiting=0, s025=1, s05=2, s075=3, coffee_out=4 } fstate, reg_fstate;
 
     always_ff @(posedge clock)
@@ -38,15 +38,12 @@ module coffee_machine (
     always_comb begin
         if (reset) begin
             reg_fstate <= waiting;
-            //reg_sai_cafe <= 1'b0;
             sai_cafe <= 1'b0;
-				//coffee_counter <= 0;
+			coffee_counter <= 0;
         end
         else begin
-            //reg_sai_cafe <= 1'b0;
-            
-            sai_cafe <= 1'b0; // esse ´e original, nao tirar
-				//coffee_counter <= 0;
+            sai_cafe <= 1'b0; // esse ï¿½e original, nao tirar
+			coffee_counter_temp <= 1'b0;
             case (fstate)
                 s025: begin
                     if (((money_in05 & ~(money_in025)) & ~(money_in1)))
@@ -59,9 +56,8 @@ module coffee_machine (
                     else
                         reg_fstate <= s025;
 
-                    //reg_sai_cafe <= 1'b0;
                     sai_cafe <= 1'b0;
-						  //reg_coffee_counter <= 0;
+					coffee_counter_temp <= 1'b0;
                 end
                 s075: begin
                     if (((money_in025 | money_in05) | money_in1))
@@ -70,16 +66,14 @@ module coffee_machine (
                     else
                         reg_fstate <= s075;
 
-                    //reg_sai_cafe <= 1'b0;
                     sai_cafe <= 1'b0;
-						  //reg_coffee_counter <= 0;
+					coffee_counter_temp <= 1'b0;
                 end
                 coffee_out: begin
                     reg_fstate <= waiting;
 
-                    //reg_sai_cafe <= 1'b1;
                     sai_cafe <= 1'b1;
-						  //reg_coffee_counter <= reg_coffee_counter_temp + 1;
+					coffee_counter_temp <= 1'b1;
                 end
                 s05: begin
                     if (((money_in025 & ~(money_in05)) & ~(money_in1)))
@@ -90,9 +84,8 @@ module coffee_machine (
                     else
                         reg_fstate <= s05;
 
-                    //reg_sai_cafe <= 1'b0;
                     sai_cafe <= 1'b0;
-						  //reg_coffee_counter <= 0;
+					coffee_counter_temp <= 1'b0;
                 end
                 waiting: begin
                     if (((money_in025 & ~(money_in05)) & ~(money_in1)))
@@ -105,19 +98,16 @@ module coffee_machine (
                     else
                         reg_fstate <= waiting;
 
-                    //reg_sai_cafe <= 1'b0;
                     sai_cafe <= 1'b0;
-						  //reg_coffee_counter <= 0;
+					coffee_counter_temp <= 1'b0;
                 end
                 default: begin
-                    //reg_sai_cafe <= 1'bx;
                     sai_cafe <= 1'bx;
-						  //reg_coffee_counter <= 0;
+					coffee_counter_temp <= 1'b0;
                     $display ("Reach undefined state");
                 end
             endcase
-            //sai_cafe <= reg_sai_cafe;
-				//coffee_counter <= reg_coffee_counter;
+			coffee_counter <= coffee_counter + coffee_counter_temp;
         end
     end
 endmodule // coffee_machine

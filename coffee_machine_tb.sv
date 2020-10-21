@@ -10,6 +10,7 @@ module coffee_machine_tb;
 
   // outputs of dut as wire
   wire sai_cafe_tb;
+  wire [9:0]coffee_counter_tb;
 
   // Instanciando o módulo
   coffee_machine my_coffee_machine_DUT (
@@ -18,7 +19,8 @@ module coffee_machine_tb;
     .money_in025(money_in025_tb),
 	  .money_in05(money_in05_tb),
 	  .money_in1(money_in1_tb),
-    .sai_cafe(sai_cafe_tb)
+    .sai_cafe(sai_cafe_tb),
+    .coffee_counter(coffee_counter_tb)
   );
 
   // etapa de reset
@@ -35,6 +37,7 @@ module coffee_machine_tb;
     
     #3
     reset_tb = 0;
+    $display("n coffees: %d", coffee_counter_tb);
 
     // simular compra de caf´e com moedas de 0.25
     money_in025_tb = 1;
@@ -45,6 +48,7 @@ module coffee_machine_tb;
     money_in05_tb = 0;
     money_in1_tb = 0;
     #20 // periodo de espera
+    $display("n coffees: %d", coffee_counter_tb);
 
     // agora simular compra com moedas de 50 centavos
     money_in025_tb = 0;
@@ -55,6 +59,7 @@ module coffee_machine_tb;
     money_in05_tb = 0;
     money_in1_tb = 0;
     #20 // periodo de espera
+    $display("n coffees: %d", coffee_counter_tb);
 
     // agora simular compra com moedas de 1 real
     money_in025_tb = 0;
@@ -65,6 +70,7 @@ module coffee_machine_tb;
     money_in05_tb = 0;
     money_in1_tb = 0;
     #20 // periodo de espera
+    $display("n coffees: %d", coffee_counter_tb);
 
     // agora simular compra com moedas de 0.5 e 1 real
     money_in025_tb = 0;
@@ -77,6 +83,31 @@ module coffee_machine_tb;
     money_in05_tb = 0;
     money_in1_tb = 0;
     #20 // periodo de espera
+    $display("n coffees: %d", coffee_counter_tb);
+
+    // agora simular compra com moedas de 0.5 e 1 real
+    money_in025_tb = 0;
+    money_in05_tb = 1;
+    #5
+    money_in05_tb = 0;
+    money_in1_tb = 1;
+    #5 // ate aqui sai um cafe com moedas de 0.5 e 1 real
+    money_in025_tb = 0;
+    money_in05_tb = 0;
+    money_in1_tb = 0;
+    #20 // periodo de espera
+    $display("n coffees: %d", coffee_counter_tb);
+
+    // simular compra de caf´e com moedas de 0.25
+    money_in025_tb = 1;
+    money_in05_tb = 0;
+    money_in1_tb = 0;
+    #40 // ate aqui sai um cafe com moedas de 0.25
+    money_in025_tb = 0;
+    money_in05_tb = 0;
+    money_in1_tb = 0;
+    #20 // periodo de espera
+    $display("n coffees: %d", coffee_counter_tb);
 
     $stop;
 

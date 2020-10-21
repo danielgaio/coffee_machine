@@ -1,8 +1,8 @@
 
 State Machine - |coffee_machine|fstate
-Name fstate.s025 fstate.s05 fstate.coffee_out fstate.s075 fstate.waiting 
+Name fstate.s075 fstate.s05 fstate.s025 fstate.waiting fstate.coffee_out 
 fstate.waiting 0 0 0 0 0 
-fstate.s075 0 0 0 1 1 
-fstate.coffee_out 0 0 1 0 1 
-fstate.s05 0 1 0 0 1 
-fstate.s025 1 0 0 0 1 
+fstate.s025 0 0 1 1 0 
+fstate.s05 0 1 0 1 0 
+fstate.s075 1 0 0 1 0 
+fstate.coffee_out 0 0 0 1 1 

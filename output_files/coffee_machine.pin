@@ -421,9 +421,9 @@ VCC                          : P13       : power  :                   : 1.1V    
 RESERVED_INPUT_WITH_WEAK_PULLUP : P14       :        :                   :         : 4A        :                
 VCC                          : P15       : power  :                   : 1.1V    :           :                
 reset                        : P16       : input  : 2.5 V             :         : 5A        : N              
-money_in05                   : P17       : input  : 2.5 V             :         : 5A        : N              
+money_in025                  : P17       : input  : 2.5 V             :         : 5A        : N              
 money_in1                    : P18       : input  : 2.5 V             :         : 5A        : N              
-money_in025                  : P19       : input  : 2.5 V             :         : 5A        : N              
+money_in05                   : P19       : input  : 2.5 V             :         : 5A        : N              
 VCCIO5A                      : P20       : power  :                   : 2.5V    : 5A        :                
 VCCPD5A                      : P21       : power  :                   : 2.5V    : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P22       :        :                   :         : 5A        :                
