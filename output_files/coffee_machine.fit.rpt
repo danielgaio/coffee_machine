@@ -1,5 +1,5 @@
 Fitter report for coffee_machine
-Wed Oct 21 08:40:43 2020
+Mon Nov  2 15:51:27 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -36,6 +36,7 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  28. Estimated Delay Added for Hold Timing Summary
  29. Estimated Delay Added for Hold Timing Details
  30. Fitter Messages
+ 31. Fitter Suppressed Messages
 
 
 
@@ -62,16 +63,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Wed Oct 21 08:40:43 2020       ;
+; Fitter Status                   ; Successful - Mon Nov  2 15:51:27 2020       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; coffee_machine                              ;
 ; Top-level Entity Name           ; coffee_machine                              ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CGXFC7C7F23C8                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 7 / 56,480 ( < 1 % )                        ;
+; Logic utilization (in ALMs)     ; 17 / 56,480 ( < 1 % )                       ;
 ; Total registers                 ; 5                                           ;
-; Total pins                      ; 6 / 268 ( 2 % )                             ;
+; Total pins                      ; 16 / 268 ( 6 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 7,024,640 ( 0 % )                       ;
 ; Total RAM Blocks                ; 0 / 686 ( 0 % )                             ;
@@ -157,8 +158,9 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processor 2            ;   0.2%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -177,8 +179,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]     ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+-------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                   ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 26 ) ; 0.00 % ( 0 / 26 )          ; 0.00 % ( 0 / 26 )        ;
-;     -- Achieved     ; 0.00 % ( 0 / 26 ) ; 0.00 % ( 0 / 26 )          ; 0.00 % ( 0 / 26 )        ;
+;     -- Requested    ; 0.00 % ( 0 / 67 ) ; 0.00 % ( 0 / 67 )          ; 0.00 % ( 0 / 67 )        ;
+;     -- Achieved     ; 0.00 % ( 0 / 67 ) ; 0.00 % ( 0 / 67 )          ; 0.00 % ( 0 / 67 )        ;
 ;                     ;                   ;                            ;                          ;
 ; Routing (by net)    ;                   ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )  ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -201,7 +203,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 26 )     ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 67 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 0 )      ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -217,11 +219,11 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 +-------------------------------------------------------------+--------------------+-------+
 ; Resource                                                    ; Usage              ; %     ;
 +-------------------------------------------------------------+--------------------+-------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 7 / 56,480         ; < 1 % ;
-; ALMs needed [=A-B+C]                                        ; 7                  ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 8 / 56,480         ; < 1 % ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 17 / 56,480        ; < 1 % ;
+; ALMs needed [=A-B+C]                                        ; 17                 ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 18 / 56,480        ; < 1 % ;
 ;         [a] ALMs used for LUT logic and registers           ; 3                  ;       ;
-;         [b] ALMs used for LUT logic                         ; 5                  ;       ;
+;         [b] ALMs used for LUT logic                         ; 15                 ;       ;
 ;         [c] ALMs used for registers                         ; 0                  ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
 ;     [B] Estimate of ALMs recoverable by dense packing       ; 1 / 56,480         ; < 1 % ;
@@ -233,16 +235,16 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 ;                                                             ;                    ;       ;
 ; Difficulty packing design                                   ; Low                ;       ;
 ;                                                             ;                    ;       ;
-; Total LABs:  partially or completely used                   ; 2 / 5,648          ; < 1 % ;
-;     -- Logic LABs                                           ; 2                  ;       ;
+; Total LABs:  partially or completely used                   ; 3 / 5,648          ; < 1 % ;
+;     -- Logic LABs                                           ; 3                  ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                  ;       ;
 ;                                                             ;                    ;       ;
-; Combinational ALUT usage for logic                          ; 8                  ;       ;
-;     -- 7 input functions                                    ; 2                  ;       ;
-;     -- 6 input functions                                    ; 3                  ;       ;
+; Combinational ALUT usage for logic                          ; 29                 ;       ;
+;     -- 7 input functions                                    ; 0                  ;       ;
+;     -- 6 input functions                                    ; 4                  ;       ;
 ;     -- 5 input functions                                    ; 1                  ;       ;
 ;     -- 4 input functions                                    ; 0                  ;       ;
-;     -- <=3 input functions                                  ; 2                  ;       ;
+;     -- <=3 input functions                                  ; 24                 ;       ;
 ; Combinational ALUT usage for route-throughs                 ; 0                  ;       ;
 ;                                                             ;                    ;       ;
 ; Dedicated logic registers                                   ; 5                  ;       ;
@@ -254,7 +256,7 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 ;         -- Routing optimization registers                   ; 0                  ;       ;
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
-; I/O pins                                                    ; 6 / 268            ; 2 %   ;
+; I/O pins                                                    ; 16 / 268           ; 6 %   ;
 ;     -- Clock pins                                           ; 1 / 11             ; 9 %   ;
 ;     -- Dedicated input pins                                 ; 0 / 23             ; 0 %   ;
 ;                                                             ;                    ;       ;
@@ -286,11 +288,11 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 ; Impedance control blocks                                    ; 0 / 3              ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 2              ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 0.0% / 0.0% / 0.0% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 0.0% / 0.1% / 0.0% ;       ;
-; Maximum fan-out                                             ; 6                  ;       ;
-; Highest non-global fan-out                                  ; 6                  ;       ;
-; Total fan-out                                               ; 57                 ;       ;
-; Average fan-out                                             ; 2.19               ;       ;
+; Peak interconnect usage (total/H/V)                         ; 0.1% / 0.1% / 0.3% ;       ;
+; Maximum fan-out                                             ; 26                 ;       ;
+; Highest non-global fan-out                                  ; 26                 ;       ;
+; Total fan-out                                               ; 127                ;       ;
+; Average fan-out                                             ; 1.90               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
 
@@ -299,11 +301,11 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 +-------------------------------------------------------------+----------------------+--------------------------------+
 ; Statistic                                                   ; Top                  ; hard_block:auto_generated_inst ;
 +-------------------------------------------------------------+----------------------+--------------------------------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 7 / 56480 ( < 1 % )  ; 0 / 56480 ( 0 % )              ;
-; ALMs needed [=A-B+C]                                        ; 7                    ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 8 / 56480 ( < 1 % )  ; 0 / 56480 ( 0 % )              ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 17 / 56480 ( < 1 % ) ; 0 / 56480 ( 0 % )              ;
+; ALMs needed [=A-B+C]                                        ; 17                   ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 18 / 56480 ( < 1 % ) ; 0 / 56480 ( 0 % )              ;
 ;         [a] ALMs used for LUT logic and registers           ; 3                    ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 5                    ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 15                   ; 0                              ;
 ;         [c] ALMs used for registers                         ; 0                    ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                    ; 0                              ;
 ;     [B] Estimate of ALMs recoverable by dense packing       ; 1 / 56480 ( < 1 % )  ; 0 / 56480 ( 0 % )              ;
@@ -315,16 +317,16 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 ;                                                             ;                      ;                                ;
 ; Difficulty packing design                                   ; Low                  ; Low                            ;
 ;                                                             ;                      ;                                ;
-; Total LABs:  partially or completely used                   ; 2 / 5648 ( < 1 % )   ; 0 / 5648 ( 0 % )               ;
-;     -- Logic LABs                                           ; 2                    ; 0                              ;
+; Total LABs:  partially or completely used                   ; 3 / 5648 ( < 1 % )   ; 0 / 5648 ( 0 % )               ;
+;     -- Logic LABs                                           ; 3                    ; 0                              ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
-; Combinational ALUT usage for logic                          ; 8                    ; 0                              ;
-;     -- 7 input functions                                    ; 2                    ; 0                              ;
-;     -- 6 input functions                                    ; 3                    ; 0                              ;
+; Combinational ALUT usage for logic                          ; 29                   ; 0                              ;
+;     -- 7 input functions                                    ; 0                    ; 0                              ;
+;     -- 6 input functions                                    ; 4                    ; 0                              ;
 ;     -- 5 input functions                                    ; 1                    ; 0                              ;
 ;     -- 4 input functions                                    ; 0                    ; 0                              ;
-;     -- <=3 input functions                                  ; 2                    ; 0                              ;
+;     -- <=3 input functions                                  ; 24                   ; 0                              ;
 ; Combinational ALUT usage for route-throughs                 ; 0                    ; 0                              ;
 ; Memory ALUT usage                                           ; 0                    ; 0                              ;
 ;     -- 64-address deep                                      ; 0                    ; 0                              ;
@@ -340,7 +342,7 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 ;                                                             ;                      ;                                ;
 ;                                                             ;                      ;                                ;
 ; Virtual pins                                                ; 0                    ; 0                              ;
-; I/O pins                                                    ; 6                    ; 0                              ;
+; I/O pins                                                    ; 16                   ; 0                              ;
 ; I/O registers                                               ; 0                    ; 0                              ;
 ; Total block memory bits                                     ; 0                    ; 0                              ;
 ; Total block memory implementation bits                      ; 0                    ; 0                              ;
@@ -353,7 +355,7 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 ;     -- Registered Output Connections                        ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Internal Connections                                        ;                      ;                                ;
-;     -- Total Connections                                    ; 57                   ; 0                              ;
+;     -- Total Connections                                    ; 127                  ; 0                              ;
 ;     -- Registered Connections                               ; 16                   ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; External Connections                                        ;                      ;                                ;
@@ -362,7 +364,7 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 ;                                                             ;                      ;                                ;
 ; Partition Interface                                         ;                      ;                                ;
 ;     -- Input Ports                                          ; 5                    ; 0                              ;
-;     -- Output Ports                                         ; 1                    ; 0                              ;
+;     -- Output Ports                                         ; 11                   ; 0                              ;
 ;     -- Bidir Ports                                          ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Registered Ports                                            ;                      ;                                ;
@@ -387,38 +389,48 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 ; Name        ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +-------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 ; clock       ; M16   ; 5B       ; 89           ; 35           ; 60           ; 5                     ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; money_in025 ; P17   ; 5A       ; 89           ; 9            ; 20           ; 5                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; money_in05  ; P19   ; 5A       ; 89           ; 9            ; 37           ; 6                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; money_in1   ; P18   ; 5A       ; 89           ; 9            ; 54           ; 5                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; reset       ; P16   ; 5A       ; 89           ; 9            ; 3            ; 6                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; money_in025 ; L22   ; 5B       ; 89           ; 36           ; 54           ; 5                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; money_in05  ; L19   ; 5B       ; 89           ; 38           ; 3            ; 5                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; money_in1   ; M22   ; 5B       ; 89           ; 36           ; 37           ; 5                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; reset       ; M18   ; 5B       ; 89           ; 36           ; 20           ; 26                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
 +-------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Output Pins                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
-+----------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
-; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Output Register ; Output Enable Register ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Output Buffer Delay ; Output Buffer Delay Control ; Location assigned by ; Output Enable Source ; Output Enable Group ;
-+----------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
-; sai_cafe ; R17   ; 5A       ; 89           ; 8            ; 20           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-+----------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++-------------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
+; Name              ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Output Register ; Output Enable Register ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Output Buffer Delay ; Output Buffer Delay Control ; Location assigned by ; Output Enable Source ; Output Enable Group ;
++-------------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
+; coffee_counter[0] ; B20   ; 7A       ; 86           ; 81           ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; coffee_counter[1] ; B17   ; 7A       ; 84           ; 81           ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; coffee_counter[2] ; B18   ; 7A       ; 84           ; 81           ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; coffee_counter[3] ; E19   ; 7A       ; 86           ; 81           ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; coffee_counter[4] ; C20   ; 7A       ; 86           ; 81           ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; coffee_counter[5] ; B21   ; 7A       ; 82           ; 81           ; 57           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; coffee_counter[6] ; D19   ; 7A       ; 86           ; 81           ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; coffee_counter[7] ; J21   ; 7A       ; 84           ; 81           ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; coffee_counter[8] ; J22   ; 7A       ; 84           ; 81           ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; coffee_counter[9] ; C21   ; 7A       ; 82           ; 81           ; 40           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; sai_cafe          ; N19   ; 5B       ; 89           ; 36           ; 3            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
++-------------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
-+---------------------------------------------------------------------------+
-; I/O Bank Usage                                                            ;
-+----------+-----------------+---------------+--------------+---------------+
-; I/O Bank ; Usage           ; VCCIO Voltage ; VREF Voltage ; VCCPD Voltage ;
-+----------+-----------------+---------------+--------------+---------------+
-; B2L      ; 0 / 0 ( -- )    ; --            ; --           ; --            ;
-; B1L      ; 0 / 14 ( 0 % )  ; --            ; --           ; --            ;
-; B0L      ; 0 / 14 ( 0 % )  ; --            ; --           ; --            ;
-; 3A       ; 0 / 16 ( 0 % )  ; 2.5V          ; --           ; 2.5V          ;
-; 3B       ; 0 / 32 ( 0 % )  ; 2.5V          ; --           ; 2.5V          ;
-; 4A       ; 0 / 48 ( 0 % )  ; 2.5V          ; --           ; 2.5V          ;
-; 5A       ; 5 / 16 ( 31 % ) ; 2.5V          ; --           ; 2.5V          ;
-; 5B       ; 1 / 16 ( 6 % )  ; 2.5V          ; --           ; 2.5V          ;
-; 7A       ; 0 / 80 ( 0 % )  ; 2.5V          ; --           ; 2.5V          ;
-; 8A       ; 0 / 32 ( 0 % )  ; 2.5V          ; --           ; 2.5V          ;
-+----------+-----------------+---------------+--------------+---------------+
++----------------------------------------------------------------------------+
+; I/O Bank Usage                                                             ;
++----------+------------------+---------------+--------------+---------------+
+; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ; VCCPD Voltage ;
++----------+------------------+---------------+--------------+---------------+
+; B2L      ; 0 / 0 ( -- )     ; --            ; --           ; --            ;
+; B1L      ; 0 / 14 ( 0 % )   ; --            ; --           ; --            ;
+; B0L      ; 0 / 14 ( 0 % )   ; --            ; --           ; --            ;
+; 3A       ; 0 / 16 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
+; 3B       ; 0 / 32 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
+; 4A       ; 0 / 48 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
+; 5A       ; 0 / 16 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
+; 5B       ; 6 / 16 ( 38 % )  ; 2.5V          ; --           ; 2.5V          ;
+; 7A       ; 10 / 80 ( 13 % ) ; 2.5V          ; --           ; 2.5V          ;
+; 8A       ; 0 / 32 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
++----------+------------------+---------------+--------------+---------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -508,11 +520,11 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 ; B14      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; B15      ; 427        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; B16      ; 406        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; B17      ; 384        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; B18      ; 382        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; B17      ; 384        ; 7A       ; coffee_counter[1]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; B18      ; 382        ; 7A       ; coffee_counter[2]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; B19      ;            ; 7A       ; VCCIO7A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; B20      ; 380        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; B21      ; 387        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; B20      ; 380        ; 7A       ; coffee_counter[0]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; B21      ; 387        ; 7A       ; coffee_counter[5]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; B22      ; 394        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; C1       ; 19         ; B1L      ; GND                             ;        ;              ;                     ; --           ;                 ; --       ; --           ;
 ; C2       ; 18         ; B1L      ; GND                             ;        ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -533,8 +545,8 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 ; C17      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; C18      ; 395        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; C19      ; 393        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; C20      ; 378        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; C21      ; 385        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; C20      ; 378        ; 7A       ; coffee_counter[4]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; C21      ; 385        ; 7A       ; coffee_counter[9]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; C22      ;            ; 7A       ; VCCIO7A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; D1       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; D2       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -554,7 +566,7 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 ; D16      ;            ; 7A, 8A   ; VCCPD7A8A                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; D17      ; 409        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; D18      ;            ; --       ; VCC_AUX                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; D19      ; 379        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; D19      ; 379        ; 7A       ; coffee_counter[6]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; D20      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; D21      ; 376        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; D22      ; 392        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -576,7 +588,7 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 ; E16      ; 411        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; E17      ;            ;          ; DNU                             ;        ;              ;                     ; --           ;                 ; --       ; --           ;
 ; E18      ;            ; 7A       ; VCCIO7A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; E19      ; 377        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; E19      ; 377        ; 7A       ; coffee_counter[3]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; E20      ; 398        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; E21      ; 374        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; E22      ; 390        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -666,8 +678,8 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 ; J18      ; 416        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; J19      ; 414        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; J20      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; J21      ; 381        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; J22      ; 383        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; J21      ; 381        ; 7A       ; coffee_counter[7]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; J22      ; 383        ; 7A       ; coffee_counter[8]               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; K1       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; K2       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; K3       ;            ; --       ; VCCL_GXBL                       ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
@@ -708,10 +720,10 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 ; L16      ;            ; --       ; VCC                             ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
 ; L17      ; 286        ; 5B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; L18      ; 290        ; 5B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
-; L19      ; 288        ; 5B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; L19      ; 288        ; 5B       ; money_in05                      ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; L20      ;            ; 5B       ; VREFB5BN0                       ; power  ;              ;                     ; --           ;                 ; --       ; --           ;
 ; L21      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; L22      ; 283        ; 5B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; L22      ; 283        ; 5B       ; money_in025                     ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; M1       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; M2       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; M3       ;            ; --       ; VCCH_GXBL                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
@@ -729,11 +741,11 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 ; M15      ;            ; --       ; VCC                             ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
 ; M16      ; 278        ; 5B       ; clock                           ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; M17      ;            ; 5B       ; VCCPD5B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; M18      ; 282        ; 5B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; M18      ; 282        ; 5B       ; reset                           ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; M19      ;            ; 5B       ; VCCIO5B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; M20      ; 285        ; 5B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; M21      ; 287        ; 5B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
-; M22      ; 281        ; 5B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; M22      ; 281        ; 5B       ; money_in1                       ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; N1       ; 28         ; B0L      ; GXB_NC                          ;        ;              ;                     ; --           ;                 ; --       ; --           ;
 ; N2       ; 29         ; B0L      ; GXB_NC                          ;        ;              ;                     ; --           ;                 ; --       ; --           ;
 ; N3       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -752,7 +764,7 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 ; N16      ; 276        ; 5B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; N17      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; N18      ;            ; 5B       ; VCCPD5B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; N19      ; 280        ; 5B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; N19      ; 280        ; 5B       ; sai_cafe                        ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; N20      ; 277        ; 5B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; N21      ; 279        ; 5B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; N22      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -771,10 +783,10 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 ; P13      ;            ; --       ; VCC                             ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
 ; P14      ; 168        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; P15      ;            ; --       ; VCC                             ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
-; P16      ; 225        ; 5A       ; reset                           ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
-; P17      ; 227        ; 5A       ; money_in025                     ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
-; P18      ; 226        ; 5A       ; money_in1                       ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
-; P19      ; 224        ; 5A       ; money_in05                      ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; P16      ; 225        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; P17      ; 227        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; P18      ; 226        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; P19      ; 224        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; P20      ;            ; 5A       ; VCCIO5A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; P21      ;            ; 5A       ; VCCPD5A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; P22      ; 222        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
@@ -794,7 +806,7 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 ; R14      ; 170        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; R15      ; 219        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; R16      ; 221        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
-; R17      ; 223        ; 5A       ; sai_cafe                        ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; R17      ; 223        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; R18      ;            ; 5A       ; VCCIO5A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; R19      ;            ; --       ; VCCPGM                          ; power  ;              ; 1.8V/2.5V/3.0V/3.3V ; --           ;                 ; --       ; --           ;
 ; R20      ;            ; 5A       ; VREFB5AN0                       ; power  ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -914,24 +926,44 @@ The pin-out file can be found in /home/daniel/Documents/GitHub/coffee_machine/ou
 Note: Pin directions (input, output or bidir) are based on device operating in user mode.
 
 
-+---------------------------------------------+
-; I/O Assignment Warnings                     ;
-+-------------+-------------------------------+
-; Pin Name    ; Reason                        ;
-+-------------+-------------------------------+
-; sai_cafe    ; Incomplete set of assignments ;
-; reset       ; Incomplete set of assignments ;
-; money_in05  ; Incomplete set of assignments ;
-; money_in025 ; Incomplete set of assignments ;
-; money_in1   ; Incomplete set of assignments ;
-; clock       ; Incomplete set of assignments ;
-; sai_cafe    ; Missing location assignment   ;
-; reset       ; Missing location assignment   ;
-; money_in05  ; Missing location assignment   ;
-; money_in025 ; Missing location assignment   ;
-; money_in1   ; Missing location assignment   ;
-; clock       ; Missing location assignment   ;
-+-------------+-------------------------------+
++---------------------------------------------------+
+; I/O Assignment Warnings                           ;
++-------------------+-------------------------------+
+; Pin Name          ; Reason                        ;
++-------------------+-------------------------------+
+; sai_cafe          ; Incomplete set of assignments ;
+; coffee_counter[0] ; Incomplete set of assignments ;
+; coffee_counter[1] ; Incomplete set of assignments ;
+; coffee_counter[2] ; Incomplete set of assignments ;
+; coffee_counter[3] ; Incomplete set of assignments ;
+; coffee_counter[4] ; Incomplete set of assignments ;
+; coffee_counter[5] ; Incomplete set of assignments ;
+; coffee_counter[6] ; Incomplete set of assignments ;
+; coffee_counter[7] ; Incomplete set of assignments ;
+; coffee_counter[8] ; Incomplete set of assignments ;
+; coffee_counter[9] ; Incomplete set of assignments ;
+; reset             ; Incomplete set of assignments ;
+; clock             ; Incomplete set of assignments ;
+; money_in05        ; Incomplete set of assignments ;
+; money_in025       ; Incomplete set of assignments ;
+; money_in1         ; Incomplete set of assignments ;
+; sai_cafe          ; Missing location assignment   ;
+; coffee_counter[0] ; Missing location assignment   ;
+; coffee_counter[1] ; Missing location assignment   ;
+; coffee_counter[2] ; Missing location assignment   ;
+; coffee_counter[3] ; Missing location assignment   ;
+; coffee_counter[4] ; Missing location assignment   ;
+; coffee_counter[5] ; Missing location assignment   ;
+; coffee_counter[6] ; Missing location assignment   ;
+; coffee_counter[7] ; Missing location assignment   ;
+; coffee_counter[8] ; Missing location assignment   ;
+; coffee_counter[9] ; Missing location assignment   ;
+; reset             ; Missing location assignment   ;
+; clock             ; Missing location assignment   ;
+; money_in05        ; Missing location assignment   ;
+; money_in025       ; Missing location assignment   ;
+; money_in1         ; Missing location assignment   ;
++-------------------+-------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -939,67 +971,97 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------+----------------+--------------+
 ; Compilation Hierarchy Node ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name    ; Library Name ;
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------+----------------+--------------+
-; |coffee_machine            ; 6.5 (6.5)            ; 7.0 (7.0)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 8 (8)               ; 5 (5)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 6    ; 0            ; |coffee_machine     ; coffee_machine ; work         ;
+; |coffee_machine            ; 16.5 (16.5)          ; 17.0 (17.0)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 29 (29)             ; 5 (5)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 16   ; 0            ; |coffee_machine     ; coffee_machine ; work         ;
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Delay Chain Summary                                                                                                        ;
-+-------------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
-; Name        ; Pin Type ; D1 ; D3_0 ; D3_1 ; D4 ; D5   ; D5 OE ; D5 OCT ; T11 (Postamble Gating) ; T11 (Postamble Ungating) ;
-+-------------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
-; sai_cafe    ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
-; reset       ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; money_in05  ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; money_in025 ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; money_in1   ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; clock       ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-+-------------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Delay Chain Summary                                                                                                              ;
++-------------------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
+; Name              ; Pin Type ; D1 ; D3_0 ; D3_1 ; D4 ; D5   ; D5 OE ; D5 OCT ; T11 (Postamble Gating) ; T11 (Postamble Ungating) ;
++-------------------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
+; sai_cafe          ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; coffee_counter[0] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; coffee_counter[1] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; coffee_counter[2] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; coffee_counter[3] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; coffee_counter[4] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; coffee_counter[5] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; coffee_counter[6] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; coffee_counter[7] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; coffee_counter[8] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; coffee_counter[9] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; reset             ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; clock             ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; money_in05        ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; money_in025       ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; money_in1         ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
++-------------------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
 
-+--------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                               ;
-+--------------------------------+-------------------+---------+
-; Source Pin / Fanout            ; Pad To Core Index ; Setting ;
-+--------------------------------+-------------------+---------+
-; reset                          ;                   ;         ;
-;      - reg_fstate.s05~0        ; 1                 ; 0       ;
-;      - reg_fstate.s075~0       ; 1                 ; 0       ;
-;      - sai_cafe~0              ; 1                 ; 0       ;
-;      - reg_fstate.waiting~0    ; 1                 ; 0       ;
-;      - reg_fstate.s025~0       ; 1                 ; 0       ;
-;      - reg_fstate.coffee_out~1 ; 1                 ; 0       ;
-; money_in05                     ;                   ;         ;
-;      - reg_fstate.s05~0        ; 1                 ; 0       ;
-;      - reg_fstate.s075~0       ; 1                 ; 0       ;
-;      - reg_fstate.coffee_out~0 ; 1                 ; 0       ;
-;      - reg_fstate.waiting~0    ; 1                 ; 0       ;
-;      - reg_fstate.s025~0       ; 1                 ; 0       ;
-;      - reg_fstate.coffee_out~1 ; 1                 ; 0       ;
-; money_in025                    ;                   ;         ;
-;      - reg_fstate.s05~0        ; 1                 ; 0       ;
-;      - reg_fstate.s075~0       ; 1                 ; 0       ;
-;      - reg_fstate.waiting~0    ; 1                 ; 0       ;
-;      - reg_fstate.s025~0       ; 1                 ; 0       ;
-;      - reg_fstate.coffee_out~1 ; 1                 ; 0       ;
-; money_in1                      ;                   ;         ;
-;      - reg_fstate.s05~0        ; 1                 ; 0       ;
-;      - reg_fstate.s075~0       ; 1                 ; 0       ;
-;      - reg_fstate.waiting~0    ; 1                 ; 0       ;
-;      - reg_fstate.s025~0       ; 1                 ; 0       ;
-;      - reg_fstate.coffee_out~1 ; 1                 ; 0       ;
-; clock                          ;                   ;         ;
-+--------------------------------+-------------------+---------+
++-----------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                            ;
++-----------------------------+-------------------+---------+
+; Source Pin / Fanout         ; Pad To Core Index ; Setting ;
++-----------------------------+-------------------+---------+
+; reset                       ;                   ;         ;
+;      - Add0~1               ; 0                 ; 0       ;
+;      - Add0~5               ; 0                 ; 0       ;
+;      - Add0~9               ; 0                 ; 0       ;
+;      - Add0~13              ; 0                 ; 0       ;
+;      - Add0~17              ; 0                 ; 0       ;
+;      - Add0~21              ; 0                 ; 0       ;
+;      - Add0~25              ; 0                 ; 0       ;
+;      - Add0~29              ; 0                 ; 0       ;
+;      - Add0~33              ; 0                 ; 0       ;
+;      - fstate.coffee_out    ; 0                 ; 0       ;
+;      - fstate.s05           ; 0                 ; 0       ;
+;      - fstate.s075          ; 0                 ; 0       ;
+;      - fstate.s025          ; 0                 ; 0       ;
+;      - sai_cafe~0           ; 0                 ; 0       ;
+;      - coffee_counter~19    ; 0                 ; 0       ;
+;      - coffee_counter~20    ; 0                 ; 0       ;
+;      - coffee_counter~21    ; 0                 ; 0       ;
+;      - coffee_counter~22    ; 0                 ; 0       ;
+;      - coffee_counter~23    ; 0                 ; 0       ;
+;      - coffee_counter~24    ; 0                 ; 0       ;
+;      - coffee_counter~25    ; 0                 ; 0       ;
+;      - coffee_counter~26    ; 0                 ; 0       ;
+;      - coffee_counter~27    ; 0                 ; 0       ;
+;      - coffee_counter~28    ; 0                 ; 0       ;
+;      - reg_fstate.waiting~0 ; 0                 ; 0       ;
+;      - coffee_counter_temp  ; 0                 ; 0       ;
+; clock                       ;                   ;         ;
+; money_in05                  ;                   ;         ;
+;      - Selector4~1          ; 1                 ; 0       ;
+;      - Selector3~0          ; 1                 ; 0       ;
+;      - reg_fstate.waiting~0 ; 1                 ; 0       ;
+;      - Selector1~0          ; 1                 ; 0       ;
+;      - Selector2~0          ; 1                 ; 0       ;
+; money_in025                 ;                   ;         ;
+;      - Selector4~1          ; 1                 ; 0       ;
+;      - Selector3~0          ; 1                 ; 0       ;
+;      - reg_fstate.waiting~0 ; 1                 ; 0       ;
+;      - Selector1~0          ; 1                 ; 0       ;
+;      - Selector2~0          ; 1                 ; 0       ;
+; money_in1                   ;                   ;         ;
+;      - Selector4~1          ; 1                 ; 0       ;
+;      - Selector3~0          ; 1                 ; 0       ;
+;      - reg_fstate.waiting~0 ; 1                 ; 0       ;
+;      - Selector1~0          ; 1                 ; 0       ;
+;      - Selector2~0          ; 1                 ; 0       ;
++-----------------------------+-------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                   ;
-+-------+----------+---------+-------+--------+----------------------+------------------+---------------------------+
-; Name  ; Location ; Fan-Out ; Usage ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-------+----------+---------+-------+--------+----------------------+------------------+---------------------------+
-; clock ; PIN_M16  ; 5       ; Clock ; yes    ; Global Clock         ; GCLK10           ; --                        ;
-+-------+----------+---------+-------+--------+----------------------+------------------+---------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                       ;
++-------+----------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; Name  ; Location ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-------+----------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; clock ; PIN_M16  ; 5       ; Clock                     ; yes    ; Global Clock         ; GCLK10           ; --                        ;
+; reset ; PIN_M18  ; 26      ; Latch enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
++-------+----------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 
 
 +--------------------------------------------------------------------------------------------------+
@@ -1016,22 +1078,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------+------------------------+
 ; Routing Resource Type        ; Usage                  ;
 +------------------------------+------------------------+
-; Block interconnects          ; 11 / 374,484 ( < 1 % ) ;
-; C12 interconnects            ; 0 / 16,664 ( 0 % )     ;
-; C2 interconnects             ; 0 / 155,012 ( 0 % )    ;
-; C4 interconnects             ; 1 / 72,600 ( < 1 % )   ;
+; Block interconnects          ; 26 / 374,484 ( < 1 % ) ;
+; C12 interconnects            ; 4 / 16,664 ( < 1 % )   ;
+; C2 interconnects             ; 11 / 155,012 ( < 1 % ) ;
+; C4 interconnects             ; 19 / 72,600 ( < 1 % )  ;
 ; DQS bus muxes                ; 0 / 30 ( 0 % )         ;
 ; DQS-18 I/O buses             ; 0 / 30 ( 0 % )         ;
 ; DQS-9 I/O buses              ; 0 / 30 ( 0 % )         ;
-; Direct links                 ; 0 / 374,484 ( 0 % )    ;
+; Direct links                 ; 3 / 374,484 ( < 1 % )  ;
 ; Global clocks                ; 1 / 16 ( 6 % )         ;
 ; Horizontal periphery clocks  ; 0 / 72 ( 0 % )         ;
-; Local interconnects          ; 5 / 112,960 ( < 1 % )  ;
+; Local interconnects          ; 15 / 112,960 ( < 1 % ) ;
 ; Quadrant clocks              ; 0 / 88 ( 0 % )         ;
-; R14 interconnects            ; 0 / 15,868 ( 0 % )     ;
-; R14/C12 interconnect drivers ; 0 / 27,256 ( 0 % )     ;
-; R3 interconnects             ; 3 / 169,296 ( < 1 % )  ;
-; R6 interconnects             ; 5 / 330,800 ( < 1 % )  ;
+; R14 interconnects            ; 3 / 15,868 ( < 1 % )   ;
+; R14/C12 interconnect drivers ; 5 / 27,256 ( < 1 % )   ;
+; R3 interconnects             ; 11 / 169,296 ( < 1 % ) ;
+; R6 interconnects             ; 7 / 330,800 ( < 1 % )  ;
 ; Spine clocks                 ; 1 / 480 ( < 1 % )      ;
 ; Wire stub REs                ; 0 / 20,834 ( 0 % )     ;
 +------------------------------+------------------------+
@@ -1092,16 +1154,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+-----------+--------------+
 ; Pin/Rules          ; IO_000002    ; IO_000001    ; IO_000003    ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007    ; IO_000008    ; IO_000047    ; IO_000046    ; IO_000045    ; IO_000027    ; IO_000026    ; IO_000024    ; IO_000023    ; IO_000022    ; IO_000021    ; IO_000020    ; IO_000019    ; IO_000018    ; IO_000015    ; IO_000014    ; IO_000013    ; IO_000012    ; IO_000011    ; IO_000010 ; IO_000009 ; IO_000034    ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+-----------+--------------+
-; Total Pass         ; 0            ; 0            ; 0            ; 0            ; 0            ; 6         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 6         ; 6         ; 0            ;
+; Total Pass         ; 0            ; 0            ; 0            ; 0            ; 0            ; 16        ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 11           ; 0            ; 0            ; 0            ; 0            ; 11           ; 0            ; 0            ; 0            ; 0            ; 11           ; 0            ; 16        ; 16        ; 0            ;
 ; Total Unchecked    ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0         ; 0            ;
-; Total Inapplicable ; 6            ; 6            ; 6            ; 6            ; 6            ; 0         ; 6            ; 6            ; 6            ; 6            ; 6            ; 6            ; 6            ; 5            ; 6            ; 6            ; 6            ; 6            ; 5            ; 6            ; 6            ; 6            ; 6            ; 5            ; 6            ; 0         ; 0         ; 6            ;
+; Total Inapplicable ; 16           ; 16           ; 16           ; 16           ; 16           ; 0         ; 16           ; 16           ; 16           ; 16           ; 16           ; 16           ; 16           ; 5            ; 16           ; 16           ; 16           ; 16           ; 5            ; 16           ; 16           ; 16           ; 16           ; 5            ; 16           ; 0         ; 0         ; 16           ;
 ; Total Fail         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0         ; 0            ;
 ; sai_cafe           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
+; coffee_counter[0]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
+; coffee_counter[1]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
+; coffee_counter[2]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
+; coffee_counter[3]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
+; coffee_counter[4]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
+; coffee_counter[5]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
+; coffee_counter[6]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
+; coffee_counter[7]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
+; coffee_counter[8]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
+; coffee_counter[9]  ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; reset              ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
+; clock              ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; money_in05         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; money_in025        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; money_in1          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
-; clock              ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+-----------+--------------+
 
 
@@ -1153,7 +1225,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; clock           ; clock                ; 2.7               ;
+; I/O             ; clock                ; 5.5               ;
+; clock           ; clock                ; 2.3               ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
@@ -1164,13 +1237,14 @@ This will disable optimization of problematic paths and expose them for further 
 +-------------------+----------------------+-------------------+
 ; Source Register   ; Destination Register ; Delay Added in ns ;
 +-------------------+----------------------+-------------------+
-; fstate.waiting    ; fstate.coffee_out    ; 0.393             ;
-; fstate.s075       ; fstate.coffee_out    ; 0.386             ;
-; fstate.s05        ; fstate.s05           ; 0.372             ;
-; fstate.coffee_out ; fstate.waiting       ; 0.348             ;
-; fstate.s025       ; fstate.coffee_out    ; 0.328             ;
+; reset             ; fstate.waiting       ; 3.162             ;
+; fstate.coffee_out ; coffee_counter_temp  ; 0.519             ;
+; fstate.s075       ; fstate.coffee_out    ; 0.365             ;
+; fstate.waiting    ; fstate.s025          ; 0.354             ;
+; fstate.s025       ; fstate.s075          ; 0.261             ;
+; fstate.s05        ; fstate.s075          ; 0.079             ;
 +-------------------+----------------------+-------------------+
-Note: This table only shows the top 5 path(s) that have the largest delay added for hold.
+Note: This table only shows the top 6 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -1184,7 +1258,7 @@ Info (21077): High junction temperature is 85 degrees C
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
 Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
-Critical Warning (169085): No exact pin location assignment(s) for 6 pins of 6 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
+Critical Warning (169085): No exact pin location assignment(s) for 16 pins of 16 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
 Info (184020): Starting Fitter periphery placement operations
 Info (11191): Automatically promoted 1 clock (1 global)
     Info (11162): clock~inputCLKENA0 with 5 fanout uses global clock CLKCTRL_G10
@@ -1193,8 +1267,41 @@ Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
 Info (11798): Fitter preparation operations ending: elapsed time is 00:00:07
+Warning (335093): The Timing Analyzer is analyzing 1 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'coffee_machine.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
+Warning (332125): Found combinational loop of 2 nodes File: /home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv Line: 117
+    Warning (332126): Node "Add0~33|datad"
+    Warning (332126): Node "Add0~33|sumout"
+Warning (332125): Found combinational loop of 2 nodes File: /home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv Line: 117
+    Warning (332126): Node "Add0~29|datad"
+    Warning (332126): Node "Add0~29|sumout"
+Warning (332125): Found combinational loop of 2 nodes File: /home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv Line: 117
+    Warning (332126): Node "Add0~25|datad"
+    Warning (332126): Node "Add0~25|sumout"
+Warning (332125): Found combinational loop of 2 nodes File: /home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv Line: 117
+    Warning (332126): Node "Add0~21|datad"
+    Warning (332126): Node "Add0~21|sumout"
+Warning (332125): Found combinational loop of 2 nodes File: /home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv Line: 117
+    Warning (332126): Node "Add0~17|datad"
+    Warning (332126): Node "Add0~17|sumout"
+Warning (332125): Found combinational loop of 2 nodes File: /home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv Line: 117
+    Warning (332126): Node "Add0~13|datad"
+    Warning (332126): Node "Add0~13|sumout"
+Warning (332125): Found combinational loop of 2 nodes File: /home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv Line: 117
+    Warning (332126): Node "Add0~9|datad"
+    Warning (332126): Node "Add0~9|sumout"
+Warning (332125): Found combinational loop of 2 nodes File: /home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv Line: 117
+    Warning (332126): Node "Add0~5|datad"
+    Warning (332126): Node "Add0~5|sumout"
+Warning (332125): Found combinational loop of 2 nodes File: /home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv Line: 117
+    Warning (332126): Node "Add0~1|datad"
+    Warning (332126): Node "Add0~1|sumout"
+Warning (332125): Found combinational loop of 4 nodes File: /home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv Line: 117
+    Warning (332126): Node "Add0~37|datad"
+    Warning (332126): Node "Add0~37|sumout"
+    Warning (332126): Node "coffee_counter~28|datab"
+    Warning (332126): Node "coffee_counter~28|combout"
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
@@ -1203,23 +1310,30 @@ Info (14951): The Fitter is using Advanced Physical Optimization.
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X78_Y0 to location X89_Y10
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X78_Y35 to location X89_Y45
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.14 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
+Info (11888): Total time spent on timing analysis during the Fitter is 0.22 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:02
-Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 1859 megabytes
-    Info: Processing ended: Wed Oct 21 08:40:43 2020
-    Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:00:51
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:03
+Info (144001): Generated suppressed messages file /home/daniel/Documents/GitHub/coffee_machine/output_files/coffee_machine.fit.smsg
+Info: Quartus Prime Fitter was successful. 0 errors, 38 warnings
+    Info: Peak virtual memory: 1873 megabytes
+    Info: Processing ended: Mon Nov  2 15:51:27 2020
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:54
+
+
++----------------------------+
+; Fitter Suppressed Messages ;
++----------------------------+
+The suppressed messages can be found in /home/daniel/Documents/GitHub/coffee_machine/output_files/coffee_machine.fit.smsg.
 
 

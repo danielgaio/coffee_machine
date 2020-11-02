@@ -11,13 +11,13 @@
 # 
 # vlog -sv -work work +incdir+/home/daniel/Documents/GitHub/coffee_machine {/home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 08:41:27 on Oct 21,2020
+# Start time: 15:54:07 on Nov 02,2020
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/daniel/Documents/GitHub/coffee_machine" /home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv 
 # -- Compiling module coffee_machine
 # 
 # Top level modules:
 # 	coffee_machine
-# End time: 08:41:27 on Oct 21,2020, Elapsed time: 0:00:00
+# End time: 15:54:07 on Nov 02,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # 

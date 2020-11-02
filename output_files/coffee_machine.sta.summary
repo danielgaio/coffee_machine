@@ -2,52 +2,100 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1100mV 85C Model Setup 'reset'
+Slack : -2.463
+TNS   : -2.463
+
 Type  : Slow 1100mV 85C Model Setup 'clock'
-Slack : -0.653
-TNS   : -2.172
+Slack : -1.892
+TNS   : -9.436
 
 Type  : Slow 1100mV 85C Model Hold 'clock'
-Slack : 0.330
+Slack : 0.332
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'reset'
+Slack : 1.116
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock'
 Slack : -0.724
-TNS   : -5.535
+TNS   : -5.544
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'reset'
+Slack : 0.378
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'reset'
+Slack : -2.590
+TNS   : -2.590
 
 Type  : Slow 1100mV 0C Model Setup 'clock'
-Slack : -0.627
-TNS   : -2.403
+Slack : -1.667
+TNS   : -8.321
 
 Type  : Slow 1100mV 0C Model Hold 'clock'
-Slack : 0.318
+Slack : 0.281
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'reset'
+Slack : 1.199
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock'
 Slack : -0.724
-TNS   : -5.535
+TNS   : -5.540
 
-Type  : Fast 1100mV 85C Model Setup 'clock'
-Slack : 0.288
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'reset'
+Slack : 0.351
 TNS   : 0.000
 
+Type  : Fast 1100mV 85C Model Setup 'clock'
+Slack : -1.415
+TNS   : -6.709
+
+Type  : Fast 1100mV 85C Model Setup 'reset'
+Slack : -0.501
+TNS   : -0.501
+
 Type  : Fast 1100mV 85C Model Hold 'clock'
-Slack : 0.150
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'reset'
+Slack : 0.534
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock'
 Slack : -0.085
-TNS   : -0.425
+TNS   : -0.423
 
-Type  : Fast 1100mV 0C Model Setup 'clock'
-Slack : 0.349
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'reset'
+Slack : 0.097
 TNS   : 0.000
 
+Type  : Fast 1100mV 0C Model Setup 'clock'
+Slack : -1.181
+TNS   : -5.612
+
+Type  : Fast 1100mV 0C Model Setup 'reset'
+Slack : -0.429
+TNS   : -0.429
+
 Type  : Fast 1100mV 0C Model Hold 'clock'
-Slack : 0.139
+Slack : 0.135
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'reset'
+Slack : 0.506
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock'
 Slack : -0.085
-TNS   : -0.425
+TNS   : -0.423
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'reset'
+Slack : 0.077
+TNS   : 0.000
 
 ------------------------------------------------------------

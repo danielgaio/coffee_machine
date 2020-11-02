@@ -1,5 +1,5 @@
 Analysis & Synthesis report for coffee_machine
-Wed Oct 21 08:40:15 2020
+Mon Nov  2 15:50:58 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -14,11 +14,13 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |coffee_machine|fstate
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  9. User-Specified and Inferred Latches
+ 10. Logic Cells Representing Combinational Loops
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -45,14 +47,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Oct 21 08:40:15 2020       ;
+; Analysis & Synthesis Status     ; Successful - Mon Nov  2 15:50:58 2020       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; coffee_machine                              ;
 ; Top-level Entity Name           ; coffee_machine                              ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 5                                           ;
-; Total pins                      ; 6                                           ;
+; Total pins                      ; 16                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -184,25 +186,25 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 6           ;
+; Estimate of Logic utilization (ALMs needed) ; 16          ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 7           ;
-;     -- 7 input functions                    ; 2           ;
-;     -- 6 input functions                    ; 3           ;
+; Combinational ALUT usage for logic          ; 28          ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 4           ;
 ;     -- 5 input functions                    ; 1           ;
 ;     -- 4 input functions                    ; 0           ;
-;     -- <=3 input functions                  ; 1           ;
+;     -- <=3 input functions                  ; 23          ;
 ;                                             ;             ;
 ; Dedicated logic registers                   ; 5           ;
 ;                                             ;             ;
-; I/O pins                                    ; 6           ;
+; I/O pins                                    ; 16          ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; reset~input ;
-; Maximum fan-out                             ; 6           ;
-; Total fan-out                               ; 56          ;
-; Average fan-out                             ; 2.33        ;
+; Maximum fan-out                             ; 26          ;
+; Total fan-out                               ; 126         ;
+; Average fan-out                             ; 1.94        ;
 +---------------------------------------------+-------------+
 
 
@@ -211,7 +213,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+----------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name    ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+----------------+--------------+
-; |coffee_machine            ; 7 (7)               ; 5 (5)                     ; 0                 ; 0          ; 6    ; 0            ; |coffee_machine     ; coffee_machine ; work         ;
+; |coffee_machine            ; 28 (28)             ; 5 (5)                     ; 0                 ; 0          ; 16   ; 0            ; |coffee_machine     ; coffee_machine ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -228,6 +230,37 @@ Encoding Type:  One-Hot
 ; fstate.s075       ; 1           ; 0          ; 0           ; 1              ; 0                 ;
 ; fstate.coffee_out ; 0           ; 0          ; 0           ; 1              ; 1                 ;
 +-------------------+-------------+------------+-------------+----------------+-------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; coffee_counter_temp                                ; reset               ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                ;
++--------------------------------------------------------+----+
+; Logic Cell Name                                        ;    ;
++--------------------------------------------------------+----+
+; coffee_counter[0]~9                                    ;    ;
+; coffee_counter~10                                      ;    ;
+; coffee_counter~11                                      ;    ;
+; coffee_counter~12                                      ;    ;
+; coffee_counter~13                                      ;    ;
+; coffee_counter~14                                      ;    ;
+; coffee_counter~15                                      ;    ;
+; coffee_counter~16                                      ;    ;
+; coffee_counter~17                                      ;    ;
+; coffee_counter~18                                      ;    ;
+; Number of logic cells representing combinational loops ; 10 ;
++--------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +-------------------------------------------------------------+
@@ -276,7 +309,7 @@ Encoding Type:  One-Hot
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 5     ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Clear  ; 4     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -291,18 +324,20 @@ Encoding Type:  One-Hot
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; arriav_ff             ; 5                           ;
-;     plain             ; 5                           ;
-; arriav_lcell_comb     ; 7                           ;
-;     extend            ; 2                           ;
-;         7 data inputs ; 2                           ;
-;     normal            ; 5                           ;
-;         2 data inputs ; 1                           ;
+;     SCLR              ; 4                           ;
+;     plain             ; 1                           ;
+; arriav_lcell_comb     ; 28                          ;
+;     arith             ; 10                          ;
+;         2 data inputs ; 10                          ;
+;     normal            ; 18                          ;
+;         2 data inputs ; 12                          ;
+;         3 data inputs ; 1                           ;
 ;         5 data inputs ; 1                           ;
-;         6 data inputs ; 3                           ;
-; boundary_port         ; 6                           ;
+;         6 data inputs ; 4                           ;
+; boundary_port         ; 16                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.35                        ;
+; Average LUT depth     ; 1.41                        ;
 +-----------------------+-----------------------------+
 
 
@@ -321,27 +356,29 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Oct 21 08:40:08 2020
+    Info: Processing started: Mon Nov  2 15:50:51 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off coffee_machine -c coffee_machine
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file coffee_machine_tb.sv
     Info (12023): Found entity 1: coffee_machine_tb File: /home/daniel/Documents/GitHub/coffee_machine/coffee_machine_tb.sv Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file coffee_machine.sv
-    Info (12023): Found entity 1: coffee_machine File: /home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv Line: 23
+    Info (12023): Found entity 1: coffee_machine File: /home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv Line: 30
 Info (12127): Elaborating entity "coffee_machine" for the top level hierarchy
+Warning (10240): Verilog HDL Always Construct warning at coffee_machine.sv(46): inferring latch(es) for variable "coffee_counter_temp", which holds its previous value in one or more paths through the always construct File: /home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv Line: 46
+Info (10041): Inferred latch for "coffee_counter_temp" at coffee_machine.sv(46) File: /home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv Line: 46
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 31 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 13 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 44 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 7 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 485 megabytes
-    Info: Processing ended: Wed Oct 21 08:40:15 2020
+    Info (21059): Implemented 11 output pins
+    Info (21061): Implemented 28 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 480 megabytes
+    Info: Processing ended: Mon Nov  2 15:50:58 2020
     Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:19
+    Info: Total CPU time (on all processors): 00:00:18
 
 

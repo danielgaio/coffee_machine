@@ -18,16 +18,34 @@
 
 // synthesis message_off 10175
 
+
+// Observaçoes: Para compilar no quartus tem que deixar apenas "always" na linha 45
+// Ja para poder testar no modelsim, eh preciso manter "always_comb"
+
+
+
 `timescale 1ns/1ns
 
 module coffee_machine (
+
+
+    // o modulo que implementa a maquina de estados possui 5 entradas sendo as 3 mais importantes as correspondentes
+    // as moedas. Então ha um sinal para moedas de 25 centavos, outro para as de 50 e outro para as de 1 real
+    // Assim que ocorrer uma sequencia de sinais que levem ao estado onde se contabilizou a entrada de 1 real a saida "sai_cafe" será ativada
+    // e a saida que conta os cafés indicará o valor atualizado
+
     input reset, input clock, input money_in025, input money_in05, input money_in1,
     output reg sai_cafe, output reg [9:0]coffee_counter);
 
-	 reg coffee_counter_temp;
 
+	reg coffee_counter_temp;
+
+    // estrutura que representa os estados atual e seguinte
     enum int unsigned { waiting=0, s025=1, s05=2, s075=3, coffee_out=4 } fstate, reg_fstate;
 
+
+
+    // neste bloco o estado atual é atualizado
     always_ff @(posedge clock)
     begin
         if (clock) begin
@@ -35,15 +53,32 @@ module coffee_machine (
         end
     end
 
+
+
+
+
+    // neste bloco são analizadas as entradas e as transições de estados
     always_comb begin
+
+
+
         if (reset) begin
             reg_fstate <= waiting;
             sai_cafe <= 1'b0;
 			coffee_counter <= 0;
         end
+
+
+
+
         else begin
-            sai_cafe <= 1'b0; // esse �e original, nao tirar
+
+            sai_cafe <= 1'b0;
 			coffee_counter_temp <= 1'b0;
+
+
+
+
             case (fstate)
                 s025: begin
                     if (((money_in05 & ~(money_in025)) & ~(money_in1)))
@@ -56,9 +91,15 @@ module coffee_machine (
                     else
                         reg_fstate <= s025;
 
+
                     sai_cafe <= 1'b0;
 					coffee_counter_temp <= 1'b0;
                 end
+
+
+
+
+
                 s075: begin
                     if (((money_in025 | money_in05) | money_in1))
                         reg_fstate <= coffee_out;
@@ -69,12 +110,22 @@ module coffee_machine (
                     sai_cafe <= 1'b0;
 					coffee_counter_temp <= 1'b0;
                 end
+
+
+
+
+
                 coffee_out: begin
                     reg_fstate <= waiting;
 
                     sai_cafe <= 1'b1;
 					coffee_counter_temp <= 1'b1;
                 end
+
+
+
+
+
                 s05: begin
                     if (((money_in025 & ~(money_in05)) & ~(money_in1)))
                         reg_fstate <= s075;
@@ -87,6 +138,10 @@ module coffee_machine (
                     sai_cafe <= 1'b0;
 					coffee_counter_temp <= 1'b0;
                 end
+
+
+
+
                 waiting: begin
                     if (((money_in025 & ~(money_in05)) & ~(money_in1)))
                         reg_fstate <= s025;
@@ -101,13 +156,26 @@ module coffee_machine (
                     sai_cafe <= 1'b0;
 					coffee_counter_temp <= 1'b0;
                 end
+
+
+
+
+
                 default: begin
                     sai_cafe <= 1'bx;
 					coffee_counter_temp <= 1'b0;
                     $display ("Reach undefined state");
                 end
+
+
+
             endcase
+
+            // atualização da contagem de café
 			coffee_counter <= coffee_counter + coffee_counter_temp;
+
+
+
         end
     end
 endmodule // coffee_machine

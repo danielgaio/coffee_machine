@@ -11,24 +11,24 @@ cModel Technology
 d/home/daniel/Documents/GitHub/coffee_machine_exercise_3/simulation/modelsim
 vcoffee_machine
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 !s110 1603283263
+Z1 !s110 1604343369
 !i10b 1
-!s100 A1fO@@:n?P58`AdSP^cRM1
+!s100 =ceVjSMDAgWmZ<G6FmVBg1
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IDfFIad]eL_]4OPIfO<>0z2
+InDb4gP1A:iblU`g?8ki`93
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 S1
 Z4 d/home/daniel/Documents/GitHub/coffee_machine/simulation/modelsim
-w1603282479
+w1604343362
 8/home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv
 F/home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv
-!i122 63
-L0 23 91
+!i122 71
+L0 31 91
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1603283263.000000
+Z6 !s108 1604343369.000000
 !s107 /home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/daniel/Documents/GitHub/coffee_machine/coffee_machine.sv|
 !i113 1
@@ -47,7 +47,7 @@ R4
 w1603283248
 8/home/daniel/Documents/GitHub/coffee_machine/coffee_machine_tb.sv
 F/home/daniel/Documents/GitHub/coffee_machine/coffee_machine_tb.sv
-!i122 64
+!i122 72
 L0 6 111
 R5
 r1

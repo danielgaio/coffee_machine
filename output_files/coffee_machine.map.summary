@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Wed Oct 21 08:40:15 2020
+Analysis & Synthesis Status : Successful - Mon Nov  2 15:50:58 2020
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : coffee_machine
 Top-level Entity Name : coffee_machine
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
 Total registers : 5
-Total pins : 6
+Total pins : 16
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

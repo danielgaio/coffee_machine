@@ -1,13 +1,13 @@
-Fitter Status : Successful - Wed Oct 21 08:40:43 2020
+Fitter Status : Successful - Mon Nov  2 15:51:27 2020
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : coffee_machine
 Top-level Entity Name : coffee_machine
 Family : Cyclone V
 Device : 5CGXFC7C7F23C8
 Timing Models : Final
-Logic utilization (in ALMs) : 7 / 56,480 ( < 1 % )
+Logic utilization (in ALMs) : 17 / 56,480 ( < 1 % )
 Total registers : 5
-Total pins : 6 / 268 ( 2 % )
+Total pins : 16 / 268 ( 6 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 7,024,640 ( 0 % )
 Total RAM Blocks : 0 / 686 ( 0 % )
